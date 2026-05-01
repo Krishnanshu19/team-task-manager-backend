@@ -12,7 +12,11 @@ const userRoutes = require('./routes/users');
 const app = express();
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'https://team-task-manager-frontend-production-26ae.up.railway.app'
+  ],
   credentials: true,
 }));
 app.use(express.json());
